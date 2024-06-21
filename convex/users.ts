@@ -48,13 +48,18 @@ export const getTopUserByPodcastCount = query({
   },
 });
 
-export const createUser = internalMutation({
+
+export const createUser = internalMutation(
+  
+  {
+ 
   args: {
     clerkId: v.string(),
     email: v.string(),
     imageUrl: v.string(),
     name: v.string(),
   },
+  
   handler: async (ctx, args) => {
     await ctx.db.insert("users", {
       clerkId: args.clerkId,
